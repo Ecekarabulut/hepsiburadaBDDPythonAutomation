@@ -1,0 +1,6 @@
+behave>=1.2.6
+selenium>=4.15.0
+webdriver-manager>=4.0.0
+pytest>=7.4.0
+pytest-html>=4.1.0
+allure-behave>=2.13.0 
