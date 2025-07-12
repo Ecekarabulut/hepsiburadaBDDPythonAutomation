@@ -13,7 +13,9 @@ Feature: Hepsiburada Website Automation
     When the user clicks the login button
     And the user enters the username
     And the user enters the password
-    # Then the login page should be displayed (isteğe bağlı, eklenebilir)
+    And the user enters the password
+
+    # Then the login page should be displayed (isteğe bağlı, eklenebilirss)
 
   
 

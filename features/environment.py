@@ -6,7 +6,7 @@ import time
 from pages.home_page import HomePage
 
 def before_all(context):
-    print("Test başlıyor...")
+    print("Test başlıyora...")
     chrome_options = Options()
     chrome_options.add_argument("--start-maximized")
     chrome_options.add_argument("--disable-notifications")
