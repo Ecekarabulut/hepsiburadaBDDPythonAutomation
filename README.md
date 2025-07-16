@@ -40,8 +40,6 @@ Bu proje, Hepsiburada e-ticaret sitesi için Python ve Selenium kullanarak geli�
 - ✅ Otomatik ChromeDriver yönetimi
 - ✅ Hata durumunda ekran görüntüsü alma
 - ✅ Çerez kabul etme otomasyonu
-- ✅ Cross-platform uyumluluk
-- ✅ CI/CD pipeline entegrasyonu hazır
 - ✅ Detaylı raporlama sistemi
 - ✅ Yeni sekme yönetimi
 - ✅ Sepet işlemleri otomasyonu
