@@ -2,7 +2,7 @@
 
 Bu proje, Hepsiburada e-ticaret sitesi için Python ve Selenium kullanarak geliştirilmiş kapsamlı web otomasyon test framework'üdür. BDD (Behavior Driven Development) yaklaşımı ile yazılmış, sürdürülebilir ve ölçeklenebilir bir yapıya sahiptir.
 
-## 🚀 Teknoloji Stack'i
+## 🚀 Teknoloji
 
 ### 🐍 **Core Technologies**
 - **Python 3.7+** - Ana programlama dili
