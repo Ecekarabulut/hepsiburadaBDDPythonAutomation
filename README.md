@@ -179,18 +179,3 @@ Test sonuçları aşağıdaki formatlarda alınabilir:
 - **WHEN Steps**: Kullanıcı eylemleri
 - **THEN Steps**: Doğrulama ve bekleme adımları
 
-## 🤝 Katkıda Bulunma
-
-1. Fork yapın
-2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
-5. Pull Request oluşturun
-
-## 📝 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır.
-
-## 📞 İletişim
-
-Sorularınız için issue açabilir veya iletişime geçebilirsiniz. 
