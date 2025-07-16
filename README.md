@@ -1,6 +1,6 @@
 # 🛒 Hepsiburada Web Otomasyon Projesi
 
-Bu proje, modern web otomasyon teknolojileri kullanarak Hepsiburada e-ticaret sitesi için kapsamlı test otomasyonu sağlar. BDD (Behavior Driven Development) yaklaşımı ile geliştirilmiş, sürdürülebilir ve ölçeklenebilir bir test framework'ü sunar.
+Bu proje, Hepsiburada e-ticaret sitesi için Python ve Selenium kullanarak geliştirilmiş kapsamlı web otomasyon test framework'üdür. BDD (Behavior Driven Development) yaklaşımı ile yazılmış, sürdürülebilir ve ölçeklenebilir bir yapıya sahiptir.
 
 ## 🚀 Teknoloji Stack'i
 
@@ -43,6 +43,9 @@ Bu proje, modern web otomasyon teknolojileri kullanarak Hepsiburada e-ticaret si
 - ✅ Cross-platform uyumluluk
 - ✅ CI/CD pipeline entegrasyonu hazır
 - ✅ Detaylı raporlama sistemi
+- ✅ Yeni sekme yönetimi
+- ✅ Sepet işlemleri otomasyonu
+- ✅ Fiyat doğrulama sistemi
 
 ## 📋 Gereksinimler
 
@@ -55,7 +58,7 @@ Bu proje, modern web otomasyon teknolojileri kullanarak Hepsiburada e-ticaret si
 1. **Projeyi klonlayın:**
 ```bash
 git clone <repository-url>
-cd Example2
+cd hepsiburadaPythonAutomation
 ```
 
 2. **Gerekli paketleri yükleyin:**
@@ -74,7 +77,7 @@ behave
 
 ### Belirli bir senaryo çalıştırma:
 ```bash
-behave --name="Ana sayfa yükleme kontrolü"
+behave --name="Home page load check"
 ```
 
 ### HTML raporu ile çalıştırma:
@@ -95,18 +98,20 @@ behave --tags=@smoke
 ## 📁 Proje Yapısı
 
 ```
-Example2/
+hepsiburadaPythonAutomation/
 ├── features/
 │   ├── hepsiburada.feature    # Test senaryoları (Gherkin)
+│   ├── environment.py         # Behave hooks ve konfigürasyon
 │   └── steps/
 │       └── hepsiburada_steps.py  # Step definitions
 ├── pages/
 │   ├── base_page.py           # Temel sayfa sınıfı
-│   ├── home_page.py           # Ana sayfa
+│   ├── home_page.py           # Ana sayfa işlemleri
 │   └── search_results_page.py # Arama sonuçları sayfası
-├── environment.py             # Behave hooks
 ├── behave.ini                 # Behave konfigürasyonu
 ├── requirements.txt           # Python bağımlılıkları
+├── run_tests.bat             # Windows test çalıştırma scripti
+├── run_tests.py              # Python test çalıştırma scripti
 └── README.md                  # Bu dosya
 ```
 
@@ -114,16 +119,13 @@ Example2/
 
 ### Mevcut Test Senaryoları:
 
-1. **Ana sayfa yükleme kontrolü** - Sayfanın doğru yüklendiğini kontrol eder
-2. **Ürün arama işlemi** - Ürün arama fonksiyonunu test eder
-3. **Ürün arama - sonuç bulunamadı** - Geçersiz arama sonuçlarını test eder
-4. **Ürün detay sayfasına gitme** - Ürün detay sayfasına erişimi test eder
-5. **Sepete ürün ekleme** - Sepete ürün ekleme işlemini test eder
-6. **Fiyat sıralama** - Fiyat sıralama fonksiyonunu test eder
-7. **Kategori menüsü kontrolü** - Kategori menüsünün görünürlüğünü test eder
-8. **Giriş yap butonu kontrolü** - Giriş butonunun görünürlüğünü test eder
-9. **Sepet butonu kontrolü** - Sepet butonunun görünürlüğünü test eder
-10. **Çerez kabul etme** - Çerez kabul etme işlemini test eder
+1. **Home page load check** - Ana sayfanın doğru yüklendiğini kontrol eder
+2. **Accept cookies** - Çerez kabul etme işlemini test eder
+3. **Click button by xpath** - Belirtilen XPath ile butona tıklar ve yeni sekmede açar
+4. **Click add to cart button** - Sepete ekle butonuna tıklar ve ürünün sepete eklendiğini doğrular
+5. **Click go to cart button** - Sepete git butonuna tıklar
+6. **Click selected checkbox** - Seçili checkbox'a tıklar
+7. **Verify total price is zero** - Sepetteki toplam fiyatın 0,00 TL olduğunu doğrular
 
 ## 🔧 Konfigürasyon
 
@@ -163,6 +165,21 @@ Test sonuçları aşağıdaki formatlarda alınabilir:
 3. **Timeout hatası:**
    - İnternet bağlantınızı kontrol edin
    - `environment.py` dosyasındaki timeout değerlerini artırın
+
+4. **ElementClickInterceptedException:**
+   - Çerez banner'ı veya popup'ları kapatın
+   - JavaScript ile tıklama yöntemini kullanın
+
+## 🏗️ Kod Yapısı
+
+### Page Object Model (POM)
+- **HomePage**: Ana sayfa işlemleri (çerez kabul, sepet işlemleri, fiyat doğrulama)
+- **BasePage**: Temel sayfa fonksiyonları
+
+### Step Definitions
+- **GIVEN Steps**: Test öncesi hazırlık adımları
+- **WHEN Steps**: Kullanıcı eylemleri
+- **THEN Steps**: Doğrulama ve bekleme adımları
 
 ## 🤝 Katkıda Bulunma
 

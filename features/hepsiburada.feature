@@ -9,15 +9,25 @@ Feature: Hepsiburada Website Automation
   Scenario: Accept cookies
     Then cookies should be accepted
 
-  Scenario: Login flow
-    When the user clicks the login button
-    And the user enters the username
-    And the user enters the password
-    And the user enters the password
+  Scenario: Click button by xpath
+    When the user clicks the button by xpath
+    Then wait 3 seconds and log
 
-    # Then the login page should be displayed (isteğe bağlı, eklenebilirss)
+  Scenario: Click add to cart button
+    When the user clicks the add to cart button
+    Then the product should be in the basket
+    Then wait 3 seconds and log
 
-  
+  Scenario: Click go to cart button
+    When the user clicks the go to cart button
+    Then wait 3 seconds and log
+
+  Scenario: Click selected checkbox
+    When the user clicks the selected checkbox
+     Then wait 3 seconds and log
+
+  Scenario: Verify total price is zero
+    Then the total price should be zero and wait 3 seconds
 
 
 
